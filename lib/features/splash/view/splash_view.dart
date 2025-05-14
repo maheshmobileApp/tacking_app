@@ -1,6 +1,6 @@
 import 'package:activity_tracker_app/constants/app_colors.dart';
-import 'package:activity_tracker_app/features/widgets/button_widget.dart';
-import 'package:activity_tracker_app/features/widgets/text_button_widget.dart';
+import 'package:activity_tracker_app/widgets/button_widget.dart';
+import 'package:activity_tracker_app/widgets/text_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 30,
             ),
             Text(
-              "Tacker App",
+              "Tracker App",
               style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,

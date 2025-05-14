@@ -1,4 +1,5 @@
 import 'package:activity_tracker_app/features/splash/view/splash_view.dart';
+import 'package:activity_tracker_app/routes/app_route_names.dart';
 import 'package:activity_tracker_app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: AppRouteNames.login,
       routes: routes,
     );
   }
