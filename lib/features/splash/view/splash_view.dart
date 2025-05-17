@@ -1,4 +1,5 @@
 import 'package:activity_tracker_app/constants/app_colors.dart';
+import 'package:activity_tracker_app/routes/app_route_names.dart';
 import 'package:activity_tracker_app/widgets/button_widget.dart';
 import 'package:activity_tracker_app/widgets/text_button_widget.dart';
 import 'package:flutter/material.dart';
@@ -50,12 +51,13 @@ class _SplashScreenState extends State<SplashScreen> {
             ButtonWidget(
                 buttonTitle: "Login",
                 onPressed: () {
-                  print("Buton Pressed");
+                  Navigator.pushNamed(context, AppRouteNames.login);
                 }),
             TextButtonWidget(
                 buttonTitle: "Sign up",
                 onPressed: () {
-                  print("Buton Pressed");
+                  Navigator.pushNamed(context, AppRouteNames.signup);
+
                 }),
           ],
         ),

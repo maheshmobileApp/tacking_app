@@ -1,19 +1,18 @@
 import 'package:activity_tracker_app/constants/app_colors.dart';
-import 'package:activity_tracker_app/routes/app_route_names.dart';
 import 'package:activity_tracker_app/validator/reg_exp.dart';
 import 'package:activity_tracker_app/widgets/app_textfield.dart';
 import 'package:activity_tracker_app/widgets/button_widget.dart';
 import 'package:activity_tracker_app/widgets/text_button_widget.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<SignUpScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -32,13 +31,31 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Align(
                 alignment: Alignment.centerLeft,
-                child: Text('Login',style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 36,
-                  color: AppColors.primary
-                ),),
+                child: Text(
+                  'Sgin Up',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 36,
+                      color: AppColors.primary),
+                ),
               ),
-              const SizedBox(height: 40,),
+              const SizedBox(
+                height: 40,
+              ),
+              AppTextfield(
+                hintText: 'User Name',
+                prefixIcon: Image.asset("assets/Message.png"),
+                controller: emailController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter user name';
+                  } 
+                  return null;
+                },
+              ),
+              const SizedBox(
+                height: 20,
+              ),
               AppTextfield(
                 hintText: 'Email',
                 prefixIcon: Image.asset("assets/Message.png"),
@@ -52,10 +69,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-                            const SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-
               AppTextfield(
                 hintText: 'Password',
                 controller: passwordController,
@@ -70,13 +86,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButtonWidget(buttonTitle: "Forgot Password ?", onPressed: (){})),
-              ButtonWidget(buttonTitle: "Login", onPressed: (){
-                loginAction();
-              }),
-           SizedBox(
+              SizedBox(
+                height: 20,
+              ),
+              ButtonWidget(
+                  buttonTitle: "Create",
+                  onPressed: () {
+                    loginAction();
+                  }),
+              SizedBox(
                 height: 20,
               ),
               Row(
@@ -96,8 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Expanded(
                     flex: 1,
                     child: Divider(
-                                          height: 2,
-                    
+                      height: 2,
                       thickness: 1,
                     ),
                   )
@@ -108,16 +125,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Don’t have an account?"),
-                    TextButtonWidget(
-                        buttonTitle: "Sign Up",
-                        onPressed: () {
-                          Navigator.pushNamed(context,AppRouteNames.signup);
-                        })
+                    Text(" have an account?"),
+                    TextButtonWidget(buttonTitle: "Sign in", onPressed: () {
+                      Navigator.pop(context);
+                    })
                   ],
                 ),
               )
-
             ],
           ),
         ),
@@ -125,7 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void loginAction(){
+  void loginAction() {
     if (_formKey.currentState!.validate()) {
       print("Form is valid");
     } else {
