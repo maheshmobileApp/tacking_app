@@ -1,6 +1,7 @@
 import 'package:activity_tracker_app/constants/app_colors.dart';
 import 'package:activity_tracker_app/features/dashboard/model/category_model.dart';
 import 'package:activity_tracker_app/features/dashboard/view/category_card_widget.dart';
+import 'package:activity_tracker_app/features/dashboard/view/task_card_widget.dart';
 import 'package:activity_tracker_app/features/dashboard/view/userInfo_card.dart';
 import 'package:flutter/material.dart';
 
@@ -40,23 +41,50 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Scaffold(
       backgroundColor: AppColors.screenBgColor,
       body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 50,
+              height: 30,
             ),
             SizedBox(
-              height: 100,
+              height: 70,
               child: UserInfoCard(
                 userName: "Hi, Steven",
                 infoText: "Let’s make this day productive",
               ),
             ),
+            Text(
+              'My Tasks',
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.textClor),
+            ),
             Expanded(
-              flex: 5,
+              flex: 3,
               child: createTasksCategoryWidget()),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Today Tasks',
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.textClor),
+                ),
+                TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "View All",
+                      style: TextStyle(color: AppColors.primary),
+                    )),
+              ],
+            ),
             Expanded(
-              flex: 1,
+              flex: 2,
               child: createTodayTasksListWidget())
           ],
         ),
@@ -84,11 +112,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget createTodayTasksListWidget() {
     return ListView.builder(
       itemBuilder: (context, index) {
-        return Container(
-          child: Text("hello"),
-        );
+        return TaskCardWidget();
       },
-      itemCount: 10,
+      itemCount: 4,
     );
 
   }
