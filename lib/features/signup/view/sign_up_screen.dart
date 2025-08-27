@@ -1,9 +1,13 @@
 import 'package:activity_tracker_app/constants/app_colors.dart';
+import 'package:activity_tracker_app/features/signup/view_model/sing_up_view_model.dart';
 import 'package:activity_tracker_app/validator/reg_exp.dart';
 import 'package:activity_tracker_app/widgets/app_textfield.dart';
 import 'package:activity_tracker_app/widgets/button_widget.dart';
 import 'package:activity_tracker_app/widgets/text_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
+
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -14,6 +18,7 @@ class SignUpScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<SignUpScreen> {
   TextEditingController emailController = TextEditingController();
+  TextEditingController userNameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   @override
@@ -45,7 +50,7 @@ class _LoginScreenState extends State<SignUpScreen> {
               AppTextfield(
                 hintText: 'User Name',
                 prefixIcon: Image.asset("assets/Message.png"),
-                controller: emailController,
+                controller: userNameController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter user name';
@@ -139,8 +144,31 @@ class _LoginScreenState extends State<SignUpScreen> {
     );
   }
 
-  void loginAction() {
+  void loginAction() async {
     if (_formKey.currentState!.validate()) {
+      final signUpVM = Provider.of<SingUpViewModel>(context, listen: false);
+      final signupData =
+          await signUpVM.signUp(emailController.text, passwordController.text);
+      if (signupData.success) {
+        // Navigate to another screen or show success message
+        Fluttertoast.showToast(
+            msg: signupData.message,
+            toastLength: Toast.LENGTH_LONG,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.green,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      } else {
+        Fluttertoast.showToast(
+            msg: signupData.message,
+            toastLength: Toast.LENGTH_LONG,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      }
       print("Form is valid");
     } else {
       print("Form is invalid");

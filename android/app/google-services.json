@@ -1,0 +1,198 @@
+{
+  "project_info": {
+    "project_number": "975477626776",
+    "project_id": "budgetdev-4662b",
+    "storage_bucket": "budgetdev-4662b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975477626776:android:4c7093b60e33efb0d5bded",
+        "android_client_info": {
+          "package_name": "com.example.activity_tracker_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975477626776-valv8qpd3tc9oqlug627pg2i05qhh6pi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD73pkR3zrhVs5FlFhkVq-MdZyei-CBoG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975477626776-r1inafeuot84h41infsud0k5n5jqbfnc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "975477626776-7c8bvd2tcp9p3v7528q3d59k4mjbftn8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.SimpleBudgetApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975477626776:android:698239cc2cc2a169d5bded",
+        "android_client_info": {
+          "package_name": "com.example.mobile_service"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975477626776-valv8qpd3tc9oqlug627pg2i05qhh6pi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD73pkR3zrhVs5FlFhkVq-MdZyei-CBoG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975477626776-r1inafeuot84h41infsud0k5n5jqbfnc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "975477626776-7c8bvd2tcp9p3v7528q3d59k4mjbftn8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.SimpleBudgetApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975477626776:android:13fef29b056d0728d5bded",
+        "android_client_info": {
+          "package_name": "com.example.wulfwallet_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975477626776-valv8qpd3tc9oqlug627pg2i05qhh6pi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD73pkR3zrhVs5FlFhkVq-MdZyei-CBoG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975477626776-r1inafeuot84h41infsud0k5n5jqbfnc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "975477626776-7c8bvd2tcp9p3v7528q3d59k4mjbftn8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.SimpleBudgetApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975477626776:android:1a25f2213115a2dad5bded",
+        "android_client_info": {
+          "package_name": "com.mycompany.budgetdev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975477626776-u3lohpql1p806pvaladga283q97fgcgt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.budgetdev",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "975477626776-valv8qpd3tc9oqlug627pg2i05qhh6pi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD73pkR3zrhVs5FlFhkVq-MdZyei-CBoG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975477626776-r1inafeuot84h41infsud0k5n5jqbfnc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "975477626776-7c8bvd2tcp9p3v7528q3d59k4mjbftn8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.SimpleBudgetApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975477626776:android:d897bc528c3119b0d5bded",
+        "android_client_info": {
+          "package_name": "com.wulfwallet_mobile.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975477626776-valv8qpd3tc9oqlug627pg2i05qhh6pi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD73pkR3zrhVs5FlFhkVq-MdZyei-CBoG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975477626776-r1inafeuot84h41infsud0k5n5jqbfnc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "975477626776-7c8bvd2tcp9p3v7528q3d59k4mjbftn8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.SimpleBudgetApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

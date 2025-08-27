@@ -18,6 +18,7 @@ class AppTextfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: TextFormField(
+        controller: controller,
         validator: validator,
          decoration: InputDecoration(
           prefixIcon: prefixIcon,
