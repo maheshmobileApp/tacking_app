@@ -2,6 +2,7 @@ import 'package:activity_tracker_app/constants/app_colors.dart';
 import 'package:activity_tracker_app/routes/app_route_names.dart';
 import 'package:activity_tracker_app/widgets/button_widget.dart';
 import 'package:activity_tracker_app/widgets/text_button_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -64,5 +65,27 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
     );
   }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(const Duration(seconds: 2), () {
+      checkCurrentUser();
+    });
+  }
+
+  void checkCurrentUser() async{
+  //  await FirebaseAuth.instance.signOut();
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      print('User is signed in: ${user.uid}');
+      Navigator.pushReplacementNamed(context, AppRouteNames.dashboard);
+    } else {
+      Navigator.pushReplacementNamed(context, AppRouteNames.login);
+      print('User is signed out.');
+    }
+  }
+
 }
 //5B67CA

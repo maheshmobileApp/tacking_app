@@ -1,10 +1,13 @@
 import 'package:activity_tracker_app/constants/app_colors.dart';
+import 'package:activity_tracker_app/features/login/view_model/login_view_model.dart';
 import 'package:activity_tracker_app/routes/app_route_names.dart';
 import 'package:activity_tracker_app/validator/reg_exp.dart';
 import 'package:activity_tracker_app/widgets/app_textfield.dart';
 import 'package:activity_tracker_app/widgets/button_widget.dart';
 import 'package:activity_tracker_app/widgets/text_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -125,9 +128,31 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void loginAction(){
+  void loginAction() async {
     if (_formKey.currentState!.validate()) {
-      print("Form is valid");
+      final loginVm = Provider.of<LoginViewModel>(context, listen: false);
+      final loginData =
+          await loginVm.login(emailController.text, passwordController.text);
+      if (loginData.success) {
+        // Navigate to another screen or show success message
+        Fluttertoast.showToast(
+            msg: loginData.message,
+            toastLength: Toast.LENGTH_LONG,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.green,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      } else {
+        Fluttertoast.showToast(
+            msg: loginData.message,
+            toastLength: Toast.LENGTH_LONG,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      }
     } else {
       print("Form is invalid");
     }

@@ -1,3 +1,4 @@
+import 'package:activity_tracker_app/features/login/view_model/login_view_model.dart';
 import 'package:activity_tracker_app/features/signup/view_model/sing_up_view_model.dart';
 import 'package:activity_tracker_app/features/splash/view/splash_view.dart';
 import 'package:activity_tracker_app/routes/app_route_names.dart';
@@ -24,6 +25,9 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => SingUpViewModel()),
+        ChangeNotifierProvider(create: (_) => LoginViewModel()),
+
+
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
